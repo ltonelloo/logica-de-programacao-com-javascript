@@ -1,10 +1,12 @@
 
 STUDY
 
---x 2022/11/14 x--
+--x 2022/12/15 x--
 
--Português
-Estudo em JavaScript. Curso Udemy "Lógica de Programação com Javascript"
+[Português]
 
--English
-Study in JavaScript. Udemy course "Lógica de Programação com Javascript"
+Estudo em JavaScript. Curso Udemy "Lógica de Programação com Javascript".
+
+[English]
+
+Study in JavaScript. Udemy course "Lógica de Programação com Javascript".
