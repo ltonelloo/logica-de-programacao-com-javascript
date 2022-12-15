@@ -1,0 +1,33 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 11.04</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 11.04</h1>
+        <p>Referência vs Valor<br /></p>
+        <hr />
+        <br />
+
+        <div id="output"></div>
+    </body>
+
+    <script>
+        let nome = ['daniel'];
+        let nome2 = nome;
+
+        console.log(nome);
+        console.log(nome2);
+
+        nome2[0] = 'maria';
+        // nome2 = 'maria';
+
+        console.log(nome);
+        console.log(nome2);
+    </script>
+</html>

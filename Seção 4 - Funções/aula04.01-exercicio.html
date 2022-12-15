@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 04.01 - Exercício</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 04.01 - Exercício</h1>
+
+        <p>    
+            Exercício<br>
+            Produzir uma calculadora com prompt.
+        </p><hr>
+        <p>Funções:</p>
+
+        <div class="functions">
+            <button class="calcButton" onclick="functionSum()">+</button>
+            <button class="calcButton" onclick="functionSub()">-</button>
+            <button class="calcButton" onclick="functionMult()">x</button>
+            <button class="calcButton" onclick="functionDiv()">÷</button>
+            <button class="calcButton" onclick="functionClear()">Clear</button>
+        </div><br><hr>
+
+        <p>Resultado:</p>
+
+        <div id="output"></div>
+
+        <script>
+            functionClear();
+
+            function functionClear(){
+                calcResult = parseFloat(prompt('Digite o número inicial.'));
+                while(isNaN(calcResult)){
+                    calcResult = parseFloat(prompt('Digite o número inicial.'));
+                }
+                output.innerHTML = calcResult;
+            }
+            
+            function functionSum(){
+                sum = parseFloat(prompt('Digite o número que você deseja somar com: ' + calcResult));
+                while(isNaN(sum)){
+                    sum = parseFloat(prompt('Digite o número que você deseja somar com: ' + calcResult));
+                }
+                calcResult += sum;
+                output.innerHTML = calcResult;
+            }
+
+            function functionSub(){
+                sub = parseFloat(prompt('Digite o número que você deseja subtrair de: ' + calcResult));
+                while(isNaN(sub)){
+                    sub = parseFloat(prompt('Digite o número que você deseja subtrair de: ' + calcResult));
+                }
+                calcResult -= sub;
+                output.innerHTML = calcResult;
+            }
+
+            function functionMult(){
+                mult = parseFloat(prompt('Digite o número que você deseja multiplicar com: ' + calcResult));
+                while(isNaN(mult)){
+                    mult = parseFloat(prompt('Digite o número que você deseja multiplicar com: ' + calcResult));
+                }
+                calcResult *= mult;
+                output.innerHTML = calcResult;
+            }
+
+            function functionDiv(){
+                div = parseFloat(prompt('Digite o número que você deseja dividir de: ' + calcResult));
+                while(isNaN(div)){
+                    div = parseFloat(prompt('Digite o número que você deseja dividir de: ' + calcResult));
+                }
+                calcResult /= div;
+                output.innerHTML = calcResult;
+            }
+        </script>
+    </body>
+</html>

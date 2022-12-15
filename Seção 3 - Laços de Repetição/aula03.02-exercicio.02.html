@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lógica de Programação JavaScript 03.02 - Exercício 02</title>
+</head>
+<body>
+    <h1>Lógica de Programação JavaScript 03.02 - Exercício 02</h1>
+
+    <p>    
+        Exercício<br>
+        Para este exercício, mostre na tela todos os anos a partir de 1004 até o ano 2017, pulando de quatro em quatro anos. 
+        Por exemplo: 1004, 1008, 1012, etc... É como mostrar os anos bissextos, mas sem as regras para descobrir se um ano é 
+        bissexto ou não. (vamos imaginar que se o ano é múltiplo de quatro, ele é bissexto).
+    </p><hr><br>
+
+    <script>
+
+        for(let i = 1004; i <= 2017; i += 4)
+        {
+            document.write('<br>Ano: ' + i);
+        }
+
+        // let ano = 1004;
+        // while(ano <= 2017){
+        //     document.write('<br>Ano: ' + ano);
+        //     ano += 4;
+        // }
+        
+    </script>
+</body>
+</html>

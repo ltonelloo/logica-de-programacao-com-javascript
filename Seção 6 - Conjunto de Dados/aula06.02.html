@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 06.02</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 06.02</h1>
+        <p>
+            Objetos
+        </p><hr><br>
+        <p id="list"></p>
+
+        <script>
+        
+            var caneta = new Object();
+            caneta.nome = 'caneta';
+            caneta.preco = 2;
+
+            let myArray = Object.values(caneta);
+            document.getElementById('list').innerHTML = myArray;
+
+
+        </script>
+
+    </body>
+</html>

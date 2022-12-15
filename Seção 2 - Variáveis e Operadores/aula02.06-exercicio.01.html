@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript 02.06</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript 02.06</h1>
+
+   <p>
+      Exercício 01<br>
+      Pedir para o usuário digitar dois númeroes e mostrar uma mensagem informando se foi aprovado ou não.
+      A nota de corte é 5. Contudo, se qualquer uma das notas for zero, reprova automaticamente.
+   </p>
+
+   <script>
+      let n1 = parseFloat(prompt('Digite a primeira nota.'));
+      let n2 = parseFloat(prompt('Digite a segunda nota.'));
+      let media = ( n1 + n2 ) / 2;
+
+      alert('Primeira nota: ' + n1);
+      alert('Segunda nota: ' + n2);
+      alert('Média: ' + media);
+
+      if(n1 == 0 || n2 == 0 || media < 5){
+         alert(`Reprovado! Nota 1: ${n1} Nota 2: ${n2} Média: ${media}`);
+         document.write(`Reprovado! <br><br>Nota 1: ${n1} <br>Nota 2: ${n2} <br><br>Média: ${media}`);
+      }
+      else{
+         alert(`Aprovado! Nota 1: ${n1} Nota 2: ${n2} Média: ${media}`);
+         document.write(`Aprovado! <br><br>Nota 1: ${n1} <br>Nota 2: ${n2} <br><br>Média: ${media}`);
+      }
+
+   </script>
+</body>
+</html>

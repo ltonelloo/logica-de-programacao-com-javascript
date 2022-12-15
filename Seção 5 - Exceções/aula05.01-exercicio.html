@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 05.01 - Exercício</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 05.01 - Exercício</h1>
+        <p>
+            Bloco Try, Catch(erro) e isNAN.<br>
+            Pedir para o usuário digitar dois números que representam os lados de um retângulo. Mostrar na tela a área total. 
+            Esse código deve ser executado quando a página é aberta e também quando clilcar num botão. 
+            O que acontece se o usuário inserir um dado inválido?
+
+        </p><hr><br>
+
+        <button class="calcButton" onclick="btnCalc()">Novo Cálculo</button><br>
+
+        <div>
+            RETÂNGULO<br>
+            Altura:     <div id="divAltura"></div>
+            Largura:    <div id="divLargura"></div>
+            Área total: <div id="divAreaTotal"></div>
+        </div>
+
+        <script>
+            btnCalc();
+
+            function btnCalc(){
+                altura = parseFloat(prompt('Digite a altura. Deve ser composta apenas por um número em metros.'));
+                while(isNaN(altura)){
+                    altura = parseFloat(prompt('Digite a altura. Deve ser composta apenas por um númeroem metros.'));
+                }
+
+                largura = parseFloat(prompt('Digite a largura. Deve ser composta apenas por um númeroem metros.'));
+                while(isNaN(largura)){
+                    largura = parseFloat(prompt('Digite a largura. Deve ser composta apenas por um númeroem metros.'));
+                }
+
+                calcValue(altura, largura);
+                showValue(altura, largura, areaTotal);
+            }
+
+            function calcValue(altura, largura){
+                areaTotal = altura * largura;
+            }
+            function showValue(altura, largura, areaTotal){
+                divAltura.innerHTML = altura + 'm';
+                divLargura.innerHTML = largura + 'm';
+                divAreaTotal.innerHTML = areaTotal + 'm²';
+            } 
+
+        </script>
+        
+    </body>
+</html>

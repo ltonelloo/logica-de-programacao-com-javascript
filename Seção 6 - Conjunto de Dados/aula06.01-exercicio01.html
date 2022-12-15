@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 06.01 - Exercício 01</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 06.01 - Exercício 01</h1>
+        <p>
+            Arrays<br>
+            Mostrar na tela todos os produtos disponíveis para compra. Os nomes dos produtos estão agrupados num array.
+        </p><hr><br>
+
+        <div id="output"></div>
+
+        <script>
+        var produtos = new Array('caneta','lapis','tesoura','borracha','caderno','livro');
+        produtos.push('armario','estilete');
+        var output = document.querySelector('#output');
+        
+        for(let i = 0; i < produtos.length; i++){
+            output.innerHTML += (i + 1 + ': ' + produtos[i] + '<br>');
+        }
+
+        </script>
+
+    </body>
+</html>

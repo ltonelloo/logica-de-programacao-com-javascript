@@ -1,0 +1,77 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 11.02</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 11.02</h1>
+        <p>
+            Iterar sobre Objetos<br />
+            Criar um objeto a partir de uma função construtora.
+        </p>
+        <hr />
+        <br />
+    </body>
+
+    <script>
+        //Sintaxe Formal
+        let obj = new Object();
+        obj.nome = 'meu objeto';
+        obj.funcao = function () {
+            console.log('eu sou um metodo');
+        };
+
+        console.log(obj.nome);
+        obj.funcao();
+
+        //Sintaxe Literal
+        var obj2 = {
+            nome: 'meu objeto 2',
+            funcao: function () {
+                console.log('eu sou o metodo do obj2');
+            },
+        };
+
+        console.log(obj2.nome);
+        obj2.funcao();
+
+        //Objetos Customizados
+        let endereco4 = {
+            logradouro: 'rua tal',
+            numero: 10,
+        };
+
+        let endereco5 = {
+            logradouro: 'rua essa',
+            numero: 20,
+        };
+
+        let endereco6 = {
+            logradouro: 'rua aquela',
+            numero: 30,
+        };
+
+        let minhaArray = new Array();
+        let hoje = new Date();
+        let obj3 = new Object();
+
+        function Endereco(rua, n, cep) {
+            this.logradouro = rua;
+            this.n = n;
+            this.cep = cep;
+            this.enderecoCompleto = function () {
+                return this.logradouro + ', ' + this.n;
+            };
+        }
+
+        let endereco1 = new Endereco('rua tal', 3, '123456-897');
+        let endereco2 = new Endereco('rua tal 2', 12, '123456-897');
+
+        console.log(endereco2.enderecoCompleto());
+    </script>
+</html>

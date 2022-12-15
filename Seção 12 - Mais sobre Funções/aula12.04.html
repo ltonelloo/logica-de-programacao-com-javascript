@@ -1,0 +1,66 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 12.04</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 12.04</h1>
+        <p>Callbacks<br /></p>
+        <hr />
+        <br />
+        <div id="output"></div>
+    </body>
+
+    <script>
+        function teste1() {
+            console.log('teste1 chamado');
+        }
+
+        function teste2(p) {
+            console.log('teste2 chamado recebendo p', p);
+        }
+
+        function executa(callBack) {
+            console.log('executa chamado');
+
+            if (typeof callBack === 'function') {
+                callBack('parametro callback');
+            }
+        }
+
+        executa();
+        executa(teste1);
+        executa(teste2);
+
+        executa(function (x) {
+            console.log('funcao anonima', x);
+        });
+
+        function dizOla(praQuem, cb) {
+            if (typeof cb === 'function') {
+                return cb(praQuem);
+            }
+            console.log('Ola', praQuem);
+        }
+
+        function boaNoite(praQuem) {
+            console.log('Boa noite', praQuem);
+        }
+
+        function boaTarde(praQuem) {
+            console.log('Boa tarde', praQuem);
+        }
+
+        dizOla('Maria');
+        dizOla('Daniel', boaNoite);
+        dizOla('João', boaTarde);
+        dizOla('Ana', function (who) {
+            console.log('Bom dia', who);
+        });
+    </script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript 02.06</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript 02.06</h1>
+
+   <p>
+      Exercício 02<br>
+      Para esse exercício, tente reescrever a lógica que fizemos em um exercício anterior, de modo a torná-la mais curta. 
+      Essa tarefa tem por objetivo te fazer pensar em como solucionar MELHOR um problema. Não tem resposta certa ou errada aqui. 
+      Cada pessoa pode pensar em maneiras diferentes de resolver o mesmo problema. O que vale aqui é exercitar sua lógica.
+   </p>
+
+   <!-- ORIGINAL
+   <script>    
+      //fazer jogador1 digitar um numero
+      var nJogador1 = prompt('numero do jogador 1');
+      nJogador1 = parseInt(nJogador1);
+      
+      //fazer jogador2 digitar outro numero
+      var nJogador2 = prompt('numero do jogador 2');
+      nJogador2 = parseInt(nJogador2);
+      
+      //se forem iguais, mostrar mensagem 'empate'
+      if(nJogador1 === nJogador2){
+         alert('voces empataram');
+      } else {
+         
+         //sortear um numero entre 0 e 1
+         var nSorteado = parseInt(Math.random() * 2);
+         // se o numero sorteado for 0, ganha quem escolher o numero MENOR
+         if(nSorteado === 0){
+            
+            if(nJogador1 < nJogador2){
+                  alert('ganhou o jogador 1');
+            } else {
+                  alert('ganhou o jogador 2');
+            }
+            
+         //se o numero sorteado for 1, ganha quem escolher o numero MAIOR
+         } else {
+            if(nJogador1 > nJogador2){
+                  alert('ganhou o jogador 1');
+            } else {
+                  alert('ganhou o jogador 2')
+            }
+         }
+         
+      }
+   </script> -->
+
+   <script>    
+      //fazer jogador1 digitar um numero
+      var nJogador1 = parseFloat(prompt('numero do jogador 1'));
+      
+      //fazer jogador2 digitar outro numero
+      var nJogador2 = parseFloat(prompt('numero do jogador 2'));
+
+      //sortear um numero entre 0 e 1
+      var nSorteado = parseInt(Math.random() * 2);
+      alert('nSorteado: ' + nSorteado);
+      
+      //se forem iguais, mostrar mensagem 'empate'
+      if(nJogador1 === nJogador2){
+         alert('voces empataram');
+      } 
+      else if((nSorteado === 0 && nJogador1 < nJogador2) || (nSorteado === 1 && nJogador1 > nJogador2)){
+         alert('ganhou o jogador 1');
+      } 
+      else {
+         alert('ganhou o jogador 2');
+      }
+   </script>
+</body>
+</html>

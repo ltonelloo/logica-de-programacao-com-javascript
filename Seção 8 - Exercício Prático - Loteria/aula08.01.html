@@ -1,0 +1,95 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 08.01 - Loteria</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 08.01 - Loteria</h1>
+        <p>
+            Exercício Prático - Loteria<br />
+            Elaboração de função e retorno de números sorteados não repetidos.
+        </p>
+        <hr />
+        <br />
+    </body>
+
+    <div id="output"></div>
+
+    <script>
+        let maximo = 10;
+        let minimo = 0;
+        let quantidade = 6;
+        let count = 0;
+        let sorteados = [];
+        let output = document.querySelector('#output');
+        let msg = '';
+
+        obterNumerosSorteados(quantidade);
+
+        msg += '<p>Números Sorteados: </p>';
+        msg += '<p> ' + sorteados.join(', ') + ' </p>';
+
+        let meusNumeros = [1, 4, 6, 7, 3, 2];
+
+        for (let i = 0; i < meusNumeros.length; i++) {
+            msg += '<p>' + 'Número: ' + meusNumeros[i];
+            msg += sorteados.indexOf(meusNumeros[i]) == -1 ? ' - Errou' : ' - Acertou';
+
+            // if (sorteados.indexOf(meusNumeros[i]) == -1) {
+            //     msg += ' - Errou';
+            // } else {
+            //     msg += ' - Acertou';
+            // }
+            msg += '</p>';
+        }
+
+        output.innerHTML = msg;
+
+        function obterNumerosSorteados() {
+            function sortear() {
+                count += 1;
+                return Math.floor(Math.random() * (maximo - minimo)) + minimo;
+            }
+
+            // for (let i = 0; i < quantidade; i++) {
+            //     sorteados[i] = sortear();
+
+            //     while (sorteados.indexOf(sorteados[i]) != i) {
+            //         sorteados[i] = sortear();
+            //     }
+            // }
+
+            while (sorteados.length < quantidade) {
+                let i = 0;
+                let sorteado = sortear();
+                if (sorteados.indexOf(sorteado) == -1) {
+                    sorteados[sorteados.length] = sorteado;
+                }
+            }
+
+            return sorteados;
+
+            // conferencia(sorteados);
+
+            // function conferencia(numeros) {
+            //     let conferidos = [];
+            //     for (let i = 0; i < numeros.length; i++) {
+            //         number = numeros.indexOf(numeros[i]);
+
+            //         conferidos[i] = number;
+            //     }
+
+            //     document.querySelector("#output").innerHTML += "<br>conferidos: " + conferidos;
+            //     document.querySelector("#output").innerHTML += "<br>sorteios: " + count;
+            // }
+
+            document.querySelector('#output').innerHTML = 'sorteados: ' + sorteados;
+            document.querySelector('#output').innerHTML += '<br>count: ' + count;
+        }
+    </script>
+</html>

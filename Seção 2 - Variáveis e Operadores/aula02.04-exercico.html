@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript 02.04 e Exercício</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript 02.04 e Exercício</h1>
+
+   <p>
+      Exercício<br>
+      Exercício para fixação de conceitos anteriores.
+   </p>
+   
+   <script>
+      let n1 = parseFloat(prompt('Digite um número.'));
+      let n2 = parseFloat(prompt('Digite outro número.'));
+      let limite = parseFloat(prompt('Estabeleça um limite.'));
+      let media = (n1 + n2) / 2;
+      
+      
+      document.write('Primeiro número: '+ n1);
+      document.write('<br>Segundo número: '+ n2);
+      document.write('<br>Média: ' + media);
+      document.write('<br>Limite: ' + limite);
+      document.write(`<br>Média maior que ${limite}: `+ (media > limite));
+
+      alert('Primeiro número: '+ n1);
+      alert('Segundo número: '+ n2);
+      alert('Média: '+ media);
+      alert('Média maior que ' + limite + ' : ' + (media > limite));
+
+
+   </script>
+</body>
+</html>

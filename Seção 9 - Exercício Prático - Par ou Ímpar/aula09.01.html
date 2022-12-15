@@ -1,0 +1,63 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 09.01 - Par ou Ímpar</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 09.01 - Par ou Ímpar</h1>
+        <p>
+            Exercício Prático - Jogo Par ou Ímpar<br />
+            Elaboração de jogo de par ou ímpar contra o 'computador'.
+        </p>
+        <hr />
+        <br />
+        <label>Digite um núnmero de 1 a 5</label>
+        <input type="number" id="meuNumero" min="1" max="5" onkeypress="return event.charCode >= 48 && event.charCode <= 57" />
+        <button onclick="jogar()">Jogar</button><br />
+
+        <input id="par" type="radio" name="check" checked /><label> Par</label>
+        <input id="impar" type="radio" name="check" /><label> Ímpar</label><br /><br />
+
+        <div id="output"></div>
+    </body>
+</html>
+
+<script>
+    let maximo = 5;
+    let minimo = 1;
+
+    document.querySelector('#meuNumero').value = 1;
+
+    function sortear() {
+        return Math.floor(Math.random() * (maximo - minimo)) + minimo;
+    }
+
+    function jogar() {
+        let par = document.getElementById('par');
+        let impar = document.getElementById('impar');
+        let nJogador = document.querySelector('#meuNumero').value;
+        let nComputador = sortear();
+        let escolha = par.checked == true ? 'Par' : 'Ímpar';
+
+        if (nJogador <= 5 && nJogador >= 1) {
+            let soma = parseFloat(nComputador) + parseFloat(nJogador);
+
+            let resultado = soma % 2 == 0 ? 'Par' : 'Ímpar';
+
+            resultado += escolha == resultado ? ' - O jogador Ganhou!' : ' - O Computador Ganhou!';
+
+            escreverTela('O computador escolheu: ' + nComputador + '<br>A soma é : ' + soma + ' ' + '<br>' + resultado);
+        } else {
+            return (document.querySelector('#output').innerHTML = 'Por favor digite um número entre 1 e 5.');
+        }
+    }
+
+    function escreverTela(conteudo) {
+        document.querySelector('#output').innerHTML = conteudo;
+    }
+</script>

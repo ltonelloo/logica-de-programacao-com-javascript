@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 06.03 - Exercício</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 06.03 - Exercício</h1>
+        <p>
+            Array de objetos.<br>
+            Chegou a hora de praticar. Para este exercício, crie um novo documento chamado 06.03_exercicio.html 
+            a partir do base. Sua missão será criar um array com três objetos. Cada objeto deverá ter duas 
+            propriedades (nome e email). 
+            Depois, basta mostrar na tela (melhor se for utilizando a div com id="output") e nome e o email 
+            de cada um dos objetos da array criada acima.
+        </p><hr><br>
+
+        <p id="output"></p>
+        <!-- <p id="output2"></p> -->
+
+        <script>
+            let msg = '';
+            var nomes = [
+                {
+                    'nome':'João Silva',
+                    'email':'joao.silva@server.com'
+                },
+                {
+                    'nome':'Anderson Silva',
+                    'email':'anderson.silva@server.com'
+                },
+                {
+                    'nome':'Rafaela Silva',
+                    'email':'rafaela.silva@server.com'
+                }
+            ];
+
+            for(let i = 0; i < nomes.length; i++){
+                msg += 'Nome: ' + nomes[i].nome + '<br>';
+                msg += 'E-mail: ' + nomes[i].email + '<br><br>';
+            }
+
+            document.querySelector('#output').innerHTML = msg;
+            // document.getElementById('output2').innerHTML = msg;
+        </script>
+    </body>
+</html>

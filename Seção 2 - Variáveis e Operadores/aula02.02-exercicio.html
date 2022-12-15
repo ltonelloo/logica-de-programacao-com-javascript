@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript - Exercícios 02.02</title>
+</head>
+<body>
+   <h1>Lógica de Programação JavaScript - Exercícios 02.02</h1>
+
+   <p>
+      Exercício<br>
+      Recepção e retorno de string fornecida.
+      Conversão de string em float.
+      Representação de operações matemáticas básicas.
+   </p>
+   
+   <script>
+      let n1 = prompt('Digite um número inteiro.');
+      let n2 = prompt('Digite outro número inteiro.');
+
+      n1 = parseFloat(n1);
+      n2 = parseFloat(n2);
+
+      //Subtração, multiplicação, divisão e soma.(Comando 'Alert' para expor uma mensagem temporária na tela.)
+      alert('A subtração dos números é: '+n1+' - '+n2+' = '+(n1 - n2));
+      alert('A multiplicação dos números é: '+n1+' x '+n2+' = '+(n1 * n2));
+      alert('A divisão dos números é: '+n1+' / '+n2+' = '+(n1 / n2));
+      alert('A soma dos números é: '+n1+' + '+n2+' = '+(n1 + n2));
+      
+      //Comando (document.write) para imprimir na tela as informações fornecidas.
+      document.write('<br>A subtração dos números é: '+n1+' - '+n2+' = '+(n1 - n2));
+      document.write('<br>A multiplicação dos números é: '+n1+' x '+n2+' = '+(n1 * n2));
+      document.write('<br>A divisão dos números é: '+n1+' / '+n2+' = '+(n1 / n2));
+      document.write('<br>A soma dos números é: '+n1+' + '+n2+' = '+(n1 + n2));
+      
+   </script>
+</body>
+</html>

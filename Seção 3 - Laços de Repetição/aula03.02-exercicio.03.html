@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lógica de Programação JavaScript 03.02 - Exercício 03</title>
+</head>
+<body>
+    <h1>Lógica de Programação JavaScript 03.02 - Exercício 03</h1>
+
+    <p>    
+        Exercício<br>
+        Para este exercicio aplique a lógica necessário para mostrar os anos que são realmente bissextos, 
+        respeitando a regra: Os anos bissextos são múltiplos de 4, não múltiplos de 100 (1900 não é bissexto) e 
+        múltiplos de 400 (2000 é bissexto).
+    </p><hr><br>
+
+    <script>
+
+        // for(let i = 1004; i <= 2017; i += 4)
+        // {
+        //     if(i % 400 == 0){
+        //         document.write('<br>Ano: ' + i); 
+        //     }
+        //     else if(i % 100 == 0){}
+        //     else{
+        //         document.write('<br>Ano: ' + i);
+        //     }
+        // }
+
+        // let ano = 1004;
+        // while(ano <= 2017){
+        //     if(ano % 400 == 0){
+        //         document.write('<br>Ano: ' + ano); 
+        //     }
+        //     else if(ano % 100 == 0){}
+        //     else{
+        //         document.write('<br>Ano: ' + ano);
+        //     }
+        //     ano += 4;
+        // }
+
+        let ano = 1004;
+        while(ano <= 2017){
+            if(!(ano % 100 === 0 || (ano % 400 === 0))){
+                document.write('<br>Ano: ' + ano);
+            }
+            else{}
+            
+            ano += 4;
+        }
+        
+    </script>
+</body>
+</html>

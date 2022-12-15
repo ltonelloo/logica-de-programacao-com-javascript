@@ -1,0 +1,64 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 10.01</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 10.01</h1>
+        <p>
+            Vetores vs Matrizes<br />
+            Array multi-direcional e multi-dimensional.
+        </p>
+        <hr />
+        <br />
+        <div id="output"></div>
+    </body>
+
+    <script>
+        let notas = [
+            [5, 6, 4, 3],
+            [2, 8, 5, 6],
+            [3, 6, 4, 8],
+            [2, 8, 4, 9],
+        ];
+
+        let msg = '';
+        let mediaBimestral = [];
+        let mediaAnual = 0;
+        let nota = 0;
+        let bimestre = 1;
+        let requisito = 5;
+
+        document.querySelector('#output').innerHTML += '## NOTAS ##<br><br>';
+
+        for (let i = 0; i < notas.length; i++) {
+            nota = 0;
+
+            document.querySelector('#output').innerHTML += bimestre + 'º Bimestre: ' + notas[i];
+            for (let j = 0; j < notas[i].length; j++) {
+                nota += notas[i][j];
+            }
+
+            mediaBimestral[i] = nota;
+            mediaBimestral[i] /= notas[i].length;
+            mediaAnual += mediaBimestral[i];
+
+            document.querySelector('#output').innerHTML += '<br>Média do Bimestre: ' + mediaBimestral[i] + '<br><br>';
+            bimestre += 1;
+        }
+
+        mediaAnual /= notas.length;
+        document.querySelector('#output').innerHTML += '<br>Média Anual: ' + mediaAnual + '<br>Média Requerida: ' + requisito;
+
+        if (mediaAnual < requisito) {
+            document.querySelector('#output').innerHTML += '<br><br>Reprovado.';
+        } else {
+            document.querySelector('#output').innerHTML += '<br><br>Aprovado.';
+        }
+    </script>
+</html>

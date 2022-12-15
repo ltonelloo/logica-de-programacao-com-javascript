@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript 02.05</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript 02.05</h1>
+
+   <p>
+      Demonstração da utilização de condicional com base em resultados.(is else)
+   </p>
+   
+   <script>
+      let n1 = parseFloat(prompt('Digite um número.'));
+      let n2 = parseFloat(prompt('Digite outro número.'));
+      let limite = parseFloat(prompt('Digite um limite.'));
+      let media = (n1 + n2) / 2;
+
+      document.write('Primeiro número: '+ n1);
+      document.write('<br>Segundo número: '+ n2);
+      document.write('<br>Média: ' + media);
+      document.write('<br>Limite: ' + limite);
+      document.write(`<br>Média maior que ${limite}: `+ (media > limite));
+
+      alert('Primeiro número: '+ n1);
+      alert('Segundo número: '+ n2);
+      alert('Média: '+ media);
+      alert('Limite: ' + limite)
+      alert('Média maior que ' + limite + ' : ' + (media > limite));
+
+      if(media > limite){
+
+         alert('Parabéns! Você foi aprovado.');
+         document.write('<br>Parabéns! Você foi aprovado.')
+
+      } else {
+
+         alert('Que pena! Você foi reprovado.');
+         document.write('<br>Que pena! Você foi reprovado')
+      } 
+
+   </script>
+</body>
+</html>

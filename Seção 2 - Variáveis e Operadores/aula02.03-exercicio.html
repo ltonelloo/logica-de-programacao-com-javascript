@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript - Exercícios 02.03</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript - Exercícios 02.03</h1>
+
+   <p>
+      Exercício<br>
+      Recepção e retorno de string fornecida.
+      Conversão de string em float.
+      Representação de operações matemáticas básicas.
+   </p>
+   
+   <script>
+      let n1 = prompt("Digite um número.");
+      let n2 = prompt("Digite outro número.");
+
+      n1 = parseFloat(n1);
+      n2 = parseFloat(n2);
+
+      alert(`O resto da divisão de ${n1} e ${n2} é: `+ (n1 % n2));
+      alert(`O número ${n1} elevado a ${n2} é: `+ (n1 ** n2));
+
+
+      document.write('<br>Primeiro número: ' + n1);
+      document.write('<br>Segundo número: ' + n2);
+      document.write(`<br>O resto da divisão de ${n1} e ${n2} é: `+ (n1 % n2));
+      document.write(`<br>O número ${n1} elevado a ${n2} é: `+ (n1 ** n2));
+   </script>
+</body>
+</html>

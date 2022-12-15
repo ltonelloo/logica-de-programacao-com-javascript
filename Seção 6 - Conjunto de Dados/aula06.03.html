@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 06.03</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 06.03</h1>
+        <p>
+            Array de objetos.
+        </p><hr><br>
+        <p id="output"></p>
+
+        <script>
+            // var nomes = ['maria','joao'];
+            // var prod = {'nome':'caneta','preco':1.1};
+            // var produtos = [prod,{'nome':'lapis','preco':2}];
+
+
+            /* Mostrar na tela os dados de produtos, contendo quantidade em estoque e preço. 
+            Estes dados estarão agrupados em um array de objetos. */
+
+            var produtosExercicio = [
+                {
+                    'nome':'caneta',
+                    'preco':2,
+                    'qtd':10
+                },
+                {
+                    'nome':'lapis',
+                    'preco':1.2,
+                    'qtd':6
+                },
+                {
+                    'nome':'borracha',
+                    'preco':0.5,
+                    'qtd':3
+                }
+            ];
+
+            var msg = '';
+
+            for(var i = 0; i < produtosExercicio.length;i++){
+                console.log(produtosExercicio[i]);
+
+                msg += 'nome: ' + produtosExercicio[i].nome + '<br>';
+                msg += 'preco: ' + produtosExercicio[i].preco + '<br>';
+                msg += 'qtd: ' + produtosExercicio[i].qtd + '<br><br>'
+            }
+
+            document.querySelector('#output').innerHTML = msg;
+        </script>
+
+    </body>
+</html>

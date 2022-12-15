@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lógica de Programação JavaScript 03.02 - Exercício 01</title>
+</head>
+<body>
+    <h1>Lógica de Programação JavaScript 03.02 - Exercício 01</h1>
+
+   <p>
+    Exercício<br>
+    Para esta tarefa reescreva o código da aula anterior, 
+    mas inserindo uma linha divisória sempre que mudar a dezena. 
+    Ou seja, entre o 10 e o 11, entre o 20 e o 21 e assim por diante.<br>
+    Dica: Para escrever uma linha horizontal, use a tag < hr >. 
+   </p><hr><br>
+
+   <script>
+    let numero = parseFloat(prompt('Digite o número a ser multiplicado.'));
+    let limite = parseFloat(prompt('Digite um limite.'));
+    let indice = 0;
+
+
+    document.write('Do While<br>');
+    do{
+        document.write(numero + ' x ' + indice + ' = ' + (numero * indice) + '<br>');
+
+        if(indice % 10 == 0 && indice > 0){
+            document.write('<hr>');
+        }
+
+        indice = indice + 1;
+
+    }while(indice <= limite)
+
+    document.write('<br><br>For<br>');
+    for(indice = 0; indice <= limite; indice++){
+        document.write(numero + ' x ' + indice + ' = ' + (numero * indice) + '<br>');
+
+        if(indice % 10 == 0 && indice > 0){
+            document.write('<hr>');
+        }
+    }
+
+    document.write('<br>Fim dos loops.');
+
+   </script>
+</body>
+</html>

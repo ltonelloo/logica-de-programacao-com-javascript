@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Icons -->
+        <script src="https://kit.fontawesome.com/562ce248b1.js" crossorigin="anonymous"></script>
+        <title>Calculadora</title>
+    </head>
+    <style>
+        * {
+            margin: 0px;
+        }
+        body {
+            color: rgb(226, 226, 226);
+            font-weight: 800;
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+        }
+
+        #calculator {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: rgba(31, 31, 31, 255);
+            width: 347px;
+            height: 370px;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-direction: column;
+            padding: 2px 2px 2px 2px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 2.4px;
+            grid-template-rows: auto repeat(5);
+        }
+
+        button {
+            background: #060606;
+            color: #ffffff;
+            border: 0px;
+            font-size: 20px;
+            width: auto;
+            height: 55px;
+        }
+
+        button:hover {
+            background: rgb(61, 61, 61);
+        }
+
+        button:active {
+            background: rgb(82, 82, 82);
+        }
+
+        #display {
+            margin-top: 2px;
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-bottom: 1px;
+            color: rgb(255, 255, 255);
+
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .functions {
+            background: #131313;
+            color: #e8e8e8;
+            font-size: 17px;
+        }
+
+        .equal {
+            background: #31302e;
+            font-weight: lighter;
+        }
+
+        .clear {
+            background: #131313;
+            font-size: 17px;
+        }
+
+        #moreLess {
+            font-size: 17px;
+        }
+
+        #historic {
+            margin-top: 5px;
+            margin-left: 8px;
+            margin-right: 8px;
+            margin-bottom: 0px;
+            color: rgb(148, 148, 148);
+
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-align: right;
+        }
+    </style>
+    <body>
+        <div id="calculator">
+            <div id="historic"></div>
+            <div id="display"></div>
+
+            <div class="buttons">
+                <!-- CE -->
+                <button class="setZero" onclick="cacel()">CE</button>
+                <!-- C -->
+                <button class="setZero" onclick="setZero()">C</button>
+                <!-- % -->
+                <button class="functions" onclick="getPercent()">
+                    <i class="fa-solid fa-percent"></i>
+                </button>
+                <!-- / -->
+                <button class="functions" onclick="startCalc('/')">
+                    <i class="fa-solid fa-divide"></i>
+                </button>
+                <!-- 7, 8 e 9 -->
+                <button onclick="includeDigit('7')">7</button>
+                <button onclick="includeDigit('8')">8</button>
+                <button onclick="includeDigit('9')">9</button>
+                <!-- X -->
+                <button class="functions" onclick="startCalc('*')">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <!-- 4, 5 e 6 -->
+                <button onclick="includeDigit('4')">4</button>
+                <button onclick="includeDigit('5')">5</button>
+                <button onclick="includeDigit('6')">6</button>
+                <!-- - -->
+                <button class="functions" onclick="startCalc('-')">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <!-- 1, 2 e 3 -->
+                <button onclick="includeDigit('1')">1</button>
+                <button onclick="includeDigit('2')">2</button>
+                <button onclick="includeDigit('3')">3</button>
+                <!-- + -->
+                <button class="functions" onclick="startCalc('+')">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <!-- +/- -->
+                <button id="moreLess" onclick="moreLess()">+/-</button>
+                <!-- 0 -->
+                <button class="zero" onclick="includeDigit('0')">0</button>
+                <!-- , -->
+                <button onclick="includePoint()">.</button>
+                <!-- = -->
+                <button class="equal" onclick="finalizeCalc('=')">
+                    <i class="fa-solid fa-equals"></i>
+                </button>
+            </div>
+
+            <script>
+                let count = 0;
+                let historic = "";
+                let newCalc = false;
+                let newNumber = true;
+                let setEqual = false;
+
+                setZero();
+
+                function setZero() {
+                    let zero = 0;
+                    count = 0;
+                    document.querySelector("#display").innerHTML = zero;
+                    document.querySelector("#historic").innerHTML = " ";
+                }
+
+                function cacel() {
+                    let zero = 0;
+                    count = 0;
+                    document.querySelector("#display").innerHTML = zero;
+                }
+
+                function includeDigit(number) {
+                    setEqual = false;
+                    while (newCalc == true) {
+                        setZero();
+                        newCalc = false;
+                    }
+
+                    if (count < 14) {
+                        number = parseFloat(number);
+                        let actualNumber = document.querySelector("#display").textContent;
+
+                        if (actualNumber == "0") {
+                            document.querySelector("#display").innerHTML = number;
+                        } else {
+                            count += 1;
+                            actualNumber += number;
+                            document.querySelector("#display").innerHTML = actualNumber;
+                        }
+                    }
+                }
+
+                function getPercent() {
+                    let number1 = document.querySelector("#display").textContent;
+                    if (number1 != 0) {
+                        number1 /= 100;
+                        document.querySelector("#display").innerHTML = number1;
+                        count = 0;
+                    }
+                }
+
+                function startCalc(operator) {
+                    setEqual = false;
+                    let number1 = document.querySelector("#display").textContent;
+                    if (newCalc == true) {
+                        document.querySelector("#historic").innerHTML = `${number1} ${operator} `;
+                        document.querySelector("#display").innerHTML = 0;
+                        newCalc = false;
+                    } else {
+                        historic = ` ${number1} ${operator} `;
+                        document.querySelector("#historic").innerHTML += historic;
+                        document.querySelector("#display").innerHTML = 0;
+                        count = 0;
+                        newNumber = true;
+                    }
+                }
+
+                function finalizeCalc(equal) {
+                    let number1 = document.querySelector("#display").textContent;
+                    if (number1 != 0 && setEqual == false) {
+                        historic = number1;
+                        document.querySelector("#historic").innerHTML += historic;
+                        let result = document.querySelector("#historic").textContent;
+                        let limit = /[1,2,3,4,5,6,7,8,9,0,+,-,*,/,.]/g;
+                        result = result.match(limit);
+                        let finalResult = "";
+                        for (let i = 0; i < result.length; i++) {
+                            finalResult += result[i];
+                        }
+                        result = eval(finalResult);
+
+                        document.querySelector("#historic").innerHTML += " =";
+                        document.querySelector("#display").innerHTML = result;
+                        console.log(result);
+                        newCalc = true;
+                        setEqual = true;
+                    }
+                }
+
+                function moreLess() {
+                    number1 = document.querySelector("#display").textContent;
+                    if (number1 != 0) {
+                        number1 = number1 * -1;
+                        document.querySelector("#display").innerHTML = number1;
+                    }
+                }
+
+                function includePoint() {
+                    number1 = document.querySelector("#display").textContent;
+                    if (number1 != "0") {
+                        number1 += ".";
+                        document.querySelector("#display").innerHTML = number1;
+                        newNumber = false;
+                    } else {
+                        number1 = document.querySelector("#display").textContent;
+                        number1 = "0.";
+                        document.querySelector("#display").innerHTML = number1;
+                        newCalc = false;
+                    }
+                }
+            </script>
+        </div>
+    </body>
+</html>

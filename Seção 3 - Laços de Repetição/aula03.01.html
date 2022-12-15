@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Lógica de Programação JavaScript 03.01</title>
+</head>
+<body>
+    <h1>Lógica de Programação JavaScript 03.01</h1>
+
+   <p>
+    Repetindo ações com "while".
+   </p><hr><br>
+
+   <script>
+    let numero = parseFloat(prompt('Digite um número.'));
+    let indice = 1;
+
+    while(indice <= 100){
+        document.write(numero + ' x ' + indice + ' = ' + (numero * indice) + '<br>');
+        indice = indice + 1;
+    }
+    document.write('Fim do loop.');
+   </script>
+</body>
+</html>

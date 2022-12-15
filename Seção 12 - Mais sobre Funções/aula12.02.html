@@ -1,0 +1,46 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/style.css" />
+        <title>Lógica de Programação JavaScript 12.02</title>
+    </head>
+
+    <body>
+        <h1>Lógica de Programação JavaScript 12.02</h1>
+        <p>
+            Função Recursiva<br />
+            Sequência de Fibonacci
+        </p>
+        <hr />
+        <br />
+    </body>
+
+    <script>
+        function letFibonacci(n) {
+            let a = 1;
+            let b = 0;
+            let c;
+
+            while (n--) {
+                c = a;
+                a = a + b;
+                b = c;
+            }
+
+            return b;
+        }
+
+        function fibonacci(n) {
+            if (n <= 2) return 1;
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+
+        console.log(letFibonacci(3));
+        console.log(letFibonacci(6));
+        console.log(fibonacci(3));
+        console.log(fibonacci(6));
+    </script>
+</html>

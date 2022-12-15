@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 04.01</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 04.01</h1>
+        <p>
+            Breve introdução à inserção de conteúdo e atrelando funções à eventos disparados por elementos no HTML.<br>
+            Geração de tabuada com limpeza.
+        </p><hr><br>
+
+        <button onclick="mostrarTatuada()">Criar Tabuada</button>
+        <button onclick="limparTabuada()">Limpar Tabuada</button><br><br><hr>
+        <div id="output"></div>
+
+        <script>
+            let output = document.querySelector('#output');
+            let mensagem = '';
+
+            function mostrarTatuada(){
+                let numero = parseFloat(prompt('Digite um número a ser multiplicado.'));
+                let limite = parseFloat(prompt('Digite um limite para a multiplicação.'))
+
+                for(let i = 0; i <= limite; i++){
+                    mensagem += (`<br>${numero} x ${i} = ${numero * i}`);
+                    output.innerHTML = mensagem;
+                }
+
+                // while(i<= limite){
+                //     mensagem += numero + 'x' +  i + '=' + (numero * i) + '<br>';
+                //     i ++;
+                // }
+            }
+            
+            function limparTabuada(){
+                mensagem = '';
+                output.innerHTML = mensagem;
+            }
+        </script>
+    </body>
+</html>

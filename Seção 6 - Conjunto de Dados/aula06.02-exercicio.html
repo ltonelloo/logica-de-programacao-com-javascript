@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Lógica de Programação JavaScript 06.02 - Exercício</title>
+    </head>
+    <body>
+        <h1>Lógica de Programação JavaScript 06.02 - Exercício</h1>
+        <p>
+            Objetos
+        </p><hr><br>
+        <p id="list"></p>
+        <p id="output"></p>
+        <p id="atividade"></p>
+
+        <script>
+
+            // Quantidade e preço em string para facilitar o entendimento.
+        
+            let caneta = new Object();
+            caneta.nome = 'Caneta';
+            caneta.preco = 'R$ 2,00';
+            caneta.quantidade = 'QTD 2';
+            caneta.especificidade = 'Azul';
+            caneta.marca = 'Bic';
+
+            let list = Object.values(caneta);
+            document.getElementById('list').innerHTML = list;
+            alert(list);
+
+            var produto1 = new Object();
+            produto1.nome = 'caneta';
+            produto1.preco = 2.2;
+            produto1.estoque = 10;
+
+            var msg = '';
+
+            msg += 'nome: ' + produto1.nome + '<br>';
+            msg += 'preco: ' + produto1.preco + '<br>';
+            msg += 'estoque: ' + produto1.estoque + '<br>';
+
+            document.querySelector('#output').innerHTML = msg;
+
+            //Função comprar como elemento do objeto produto1.
+            produto1.comprar = function(){
+                document.getElementById('atividade').innerHTML = (atividade = 'comprou caneta <br>');
+                this.estoque--;
+                document.getElementById('atividade').innerHTML = (atividade += this.estoque);
+            }
+
+            
+
+
+        </script>
+
+    </body>
+</html>

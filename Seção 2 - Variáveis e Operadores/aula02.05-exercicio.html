@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/style.css">
+   <title>Logica de Programação JavaScript 02.05</title>
+</head>
+<body>
+   <h1>Logica de Programação JavaScript 02.05</h1>
+
+   <p>
+      Exercício<br>
+      Produzir um jogo onde existem 2 jogadores. Cada um insere um número, 
+      outro número aleatório é gerado (0 ou 1).
+      Caso seja 1 o maior número vence, caso contrário, o menor.
+   </p>
+
+   <script>
+      let jogador1 = parseFloat(prompt('Jogador 1: Digite um número de 1 a 100.'));
+      let jogador2 = parseFloat(prompt('Jogador 2: Digite um número de 1 a 100.'));
+      let random = Math.floor(Math.random() * 2); // Math.floor(Math.random() * (max - min) ) + min;
+      alert('Número aleatório: ' + random);
+      document.write('Número aleatório: ' + random);
+
+      if(jogador1 == jogador2){
+         alert('Números iguais! Empate!');
+         document.write('<br>Números iguais! Empate!');
+         document.write('<br>Jogador1: ' + jogador1 + ' <br>Jogador2: ' + jogador2);
+      } 
+      else if (random == 0){
+         if(jogador1 < jogador2){
+            alert('O menor número ganha! Jogador 1 ganhou!');
+            alert('Jogador1: ' + jogador1 + ' Jogador2: ' + jogador2);
+            document.write('<br>O menor número ganha!<br><br>Jogador 1 ganhou!<br>Jogador1: ' + jogador1 + ' <br>Jogador2: ' + jogador2);
+         } 
+         else {
+            alert('O menor número ganha! Jogador 2 ganhou!');
+            alert('Jogador1: ' + jogador1 + ' Jogador2: ' + jogador2);
+            document.write('<br>O menor número ganha!<br><br>Jogador 2 ganhou!<br>Jogador1: ' + jogador1 + ' <br>Jogador2: ' + jogador2);
+         }
+
+      } 
+      else if(random == 1){
+         if(jogador1 > jogador2){
+            alert('O maior número ganha! Jogador 1 ganhou!');
+            alert('Jogador1: ' + jogador1 + ' Jogador2: ' + jogador2);
+            document.write('<br>O maior número ganha!<br><br>Jogador 1 ganhou!<br>Jogador1: ' + jogador1 + ' <br>Jogador2: ' + jogador2);
+         } 
+         else {
+            alert('O maior número ganha! Jogador 2 ganhou!');
+            alert('Jogador1: ' + jogador1 + ' Jogador2: ' + jogador2);
+            document.write('<br>O maior número ganha!<br><br>Jogador 2 ganhou!<br>Jogador1: ' + jogador1 + ' <br>Jogador2: ' + jogador2);
+         }
+
+      }
+   </script>
+</body>
+</html>
